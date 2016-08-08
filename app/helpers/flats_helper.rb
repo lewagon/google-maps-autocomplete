@@ -1,0 +1,2 @@
+module FlatsHelper
+end
