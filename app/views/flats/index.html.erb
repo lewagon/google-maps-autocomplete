@@ -1,14 +1,17 @@
 <div class="container padded-top">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-
       <p><%= link_to "Add a flat", new_flat_path %></p>
 
       <table class="table">
         <% @flats.each do |flat| %>
-          <tr>
+          <tr data-flat-id="<%= flat.id %>">
             <td>
               <%= flat.address %>, <%= flat.zip_code %> <%= flat.city %>
+            </td>
+            <td>
+              <%= link_to "×", flat_path(flat), method: :delete, remote: true,
+                    data: { confirm: 'Delete flat?' } %>
             </td>
           </tr>
         <% end %>

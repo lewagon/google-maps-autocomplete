@@ -16,6 +16,11 @@ class FlatsController < ApplicationController
     end
   end
 
+  def destroy
+    @flat = Flat.find(params[:id])
+    @flat.destroy
+  end
+
   private
 
   def flat_params
