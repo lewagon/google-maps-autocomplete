@@ -10,6 +10,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
+    <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= yield(:after_js) %>

@@ -1,0 +1,18 @@
+<div class="container padded-top">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <p><%= link_to "Add a flat", new_flat_path %></p>
+
+      <table class="table">
+        <% @flats.each do |flat| %>
+          <tr>
+            <td>
+              <%= flat.address %>, <%= flat.zip_code %> <%= flat.city %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

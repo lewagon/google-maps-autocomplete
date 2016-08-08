@@ -1,0 +1,17 @@
+<div class="container padded-top">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= simple_form_for(@flat) do |f| %>
+        <%= f.input :address %>
+        <%= f.input :zip_code %>
+        <%= f.input :city %>
+        <%= f.input :country, priority: [ 'FR' ] %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= content_for(:after_js) do %>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyDANjx3bosEtIyzJaoWs50Wnt6nt_1rmxU"></script>
+<% end %>
