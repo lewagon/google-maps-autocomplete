@@ -1,7 +1,15 @@
 <div class="container padded-top">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <p><%= link_to "Add a flat", new_flat_path %></p>
+      <p>
+        <%= link_to new_flat_path do %>
+          <i class="fa fa-plus"></i> Add a flat
+        <% end %>
+        |
+        <%= link_to "https://github.com/lewagon/google-maps-autocomplete#readme", target: :blank do %>
+          <i class="fa fa-github"></i> Source code
+        <% end %>
+      </p>
 
       <% if @flats.any? %>
         <table class="table">
@@ -19,8 +27,9 @@
                 <td><%= flat.latitude %></td>
                 <td><%= flat.longitude %></td>
                 <td>
-                  <%= link_to "×", flat_path(flat), method: :delete, remote: true,
-                        data: { confirm: 'Delete flat?' } %>
+                  <%= link_to flat_path(flat), method: :delete, remote: true, data: { confirm: 'Delete flat?' } do %>
+                    <i class="fa fa-trash"></i>
+                  <% end %>
                 </td>
               </tr>
             <% end %>
