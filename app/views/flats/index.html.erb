@@ -1,21 +1,32 @@
 <div class="container padded-top">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-8 col-md-offset-2">
       <p><%= link_to "Add a flat", new_flat_path %></p>
 
-      <table class="table">
-        <% @flats.each do |flat| %>
-          <tr data-flat-id="<%= flat.id %>">
-            <td>
-              <%= flat.address %>, <%= flat.zip_code %> <%= flat.city %>
-            </td>
-            <td>
-              <%= link_to "×", flat_path(flat), method: :delete, remote: true,
-                    data: { confirm: 'Delete flat?' } %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
+      <% if @flats.any? %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Address</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @flats.each do |flat| %>
+              <tr data-flat-id="<%= flat.id %>">
+                <td><%= flat.full_address %></td>
+                <td><%= flat.latitude %></td>
+                <td><%= flat.longitude %></td>
+                <td>
+                  <%= link_to "×", flat_path(flat), method: :delete, remote: true,
+                        data: { confirm: 'Delete flat?' } %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
     </div>
   </div>
 </div>
