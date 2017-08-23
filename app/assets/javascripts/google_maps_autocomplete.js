@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", function() {
   var flatAddress = document.getElementById('flat_address');
 
   if (flatAddress) {
-    var autocompvare = new google.maps.places.Autocompvare(flatAddress, { types: ['geocode'] });
-    google.maps.event.addListener(autocompvare, 'place_changed', onPlaceChanged);
+    var autocomplete = new google.maps.places.Autocomplete(flatAddress, { types: ['geocode'] });
+    google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
     google.maps.event.addDomListener(flatAddress, 'keydown', function(e) {
       if (e.key === "Enter") {
         e.preventDefault(); // Do not submit the form on Enter.
