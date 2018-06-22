@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '2.5.1'
 
-gem 'rails', '5.0.0'
+gem 'rails', '5.2.0'
 gem 'puma'
 gem 'pg'
 gem 'figaro'
@@ -19,9 +19,6 @@ gem 'country_select'
 gem 'autoprefixer-rails'
 
 group :development, :test do
-  gem 'binding_of_caller'
-  gem 'better_errors'
-
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
