@@ -112,7 +112,8 @@ GEM
       pry (~> 0.10)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
-    puma (3.6.0)
+    puma (4.2.1)
+      nio4r (~> 2.0)
     rack (2.0.6)
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
@@ -214,7 +215,7 @@ DEPENDENCIES
   uglifier
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.6.5p114
 
 BUNDLED WITH
-   1.16.3
+   1.17.2
